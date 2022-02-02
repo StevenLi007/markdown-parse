@@ -73,6 +73,12 @@ public class MarkdownParseTest {
     public void failingTestForLab() throws IOException {
         assertEquals(1, 1);
     }
+
+    @Test
+    public void TestNine() throws IOException {
+        assertEquals(List.of("something.com"),
+            MarkdownParse.getLinks(getContents("test-file9.md")));
+    }
     
 
     public static String getContents(String filePath) throws IOException {
