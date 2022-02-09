@@ -68,9 +68,15 @@ public class MarkdownParseTest {
         assertEquals(new ArrayList<String>(), 
             MarkdownParse.getLinks(getContents("test-file8.md")));
     }
+
     @Test
-    public void joesNewTestNine() throws IOException {
-        assertEquals(List.of("something.com"), 
+    public void failingTestForLab() throws IOException {
+        assertEquals(1, 1);
+    }
+
+    @Test
+    public void TestNine() throws IOException {
+        assertEquals(List.of("something.com"),
             MarkdownParse.getLinks(getContents("test-file9.md")));
     }
     
