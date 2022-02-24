@@ -75,11 +75,28 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void TestNine() throws IOException {
+    public void testNine() throws IOException {
         assertEquals(List.of("something.com"),
             MarkdownParse.getLinks(getContents("test-file9.md")));
     }
     
+    @Test
+    public void testSnippet1() throws IOException {
+        assertEquals(List.of("url.com", "`google.com", "google.com", "ucsd.edu"), 
+            MarkdownParse.getLinks(getContents("snippet-1.md")));
+    }
+
+    // @Test
+    // public void testSnippet2() throws IOException {
+    //     assertEquals(List.of("a.com", "b.com", "a.com(())", "example.com"), 
+    //         MarkdownParse.getLinks(getContents("snippet-2.md")));
+    // }
+
+    @Test
+    public void testSnippet3() throws IOException {
+        assertEquals(List.of("https://twitter.com", "https://ucsd-cse15l-w22.github.io/", "github.com", "https://cse.ucsd.edu/"), 
+            MarkdownParse.getLinks(getContents("snippet-3.md")));
+    }
 
     public static String getContents(String filePath) throws IOException {
         Path fileName = Path.of(filePath);
